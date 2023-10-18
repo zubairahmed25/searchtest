@@ -15,7 +15,7 @@ const AutoCom = (props) => {
 
     const search = autocomplete({
       container: containerRef.current,
-      
+      detachedMediaQuery: 'none',
       onStateChange:e=>props.setQuery(e?.state?.query),
       renderer: { createElement, Fragment, render: () => {} },
       onSubmit:(e)=>navigate(`/products/${e.state.query}`),

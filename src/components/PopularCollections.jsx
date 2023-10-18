@@ -1,16 +1,17 @@
-import React from "react";
-import PanelCollectionCard from "./PanelCollectionCard";
+import React, { Suspense, lazy } from "react";
+import PanelCollectionSkelton from "./Skeltons/PanelCollectionSkelton";
+const PanelCollectionCard =lazy(()=>import("./PanelCollectionCard"))
 
 const PopularCollections = () => {
   return (
     <div>
       <div className="panel-section-bottom-title">Popular collections (6)</div>
       <div className="collections">
+        {([...new Array(5)]).map((_,i)=>{
+        return <Suspense key={i} fallback={<PanelCollectionSkelton/>}>
         <PanelCollectionCard />
-        <PanelCollectionCard />
-        <PanelCollectionCard />
-        <PanelCollectionCard />
-        <PanelCollectionCard />
+        </Suspense>
+        })}
       </div>
     </div>
   );

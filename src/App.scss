@@ -20,17 +20,11 @@
   bottom: 0;
   left: 0 !important;
   z-index: 10;
-  display: none;
   margin: 0;
   background-color: var(--Color_Black-DarkMode);
   overflow-y: auto;
   transition: opacity 200ms ease-in, filter 200ms ease-in;
-
-  &.havequery {
-    display: block;
-  }
-
-  .aa-DetachedOverlay {}
+  display: block;
 
   .search-bar-wrapper {
 
@@ -329,11 +323,12 @@
         }
       }
 
-      
+
     }
 
 
   }
+
   .product-results {
     &-header {
       align-items: center;
@@ -386,6 +381,7 @@
 
     }
   }
+
   .product-item {
     margin: 0;
 
@@ -402,11 +398,16 @@
 
         &-picture {
           width: 100%;
-          height: 100%;
+          padding-top: calc(1.5024390243902 * 100%);
           overflow: hidden;
+          position: relative;
 
           img {
+            position: absolute;
             width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
             opacity: 1;
             transition: opacity 0.2s ease-out;
           }
@@ -504,158 +505,169 @@
 
 }
 
-body {
-  &.aa-Detached {
-    // .aa-Autocomplete {
-    //   position: absolute;
-    // }
 
-    .aa-Panel {
-      background-color: white;
-    }
+.aa-DetachedCancelButton {
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  z-index: 1;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 44px;
+  height: 44px;
+  background-color: transparent;
+  border: none;
+  background-color: transparent;
+  color: transparent;
 
-    .aa-List {
-      list-style-type: none;
-      background-color: #141414;
-      display: flex;
-      flex-direction: column;
-      padding-left: 15px;
-      gap: 20px;
-      padding-bottom: 5px;
-      
-      li{
-        height: 14px;
-        .aa-ItemLink{
-          height: 14px;
-          border: none;
-          background-color: transparent;
-          width: 100%;
-          text-align: left;
-          color: white;
-          text-decoration: none;
-          mark{
-            color: white;
-            background-color: transparent;
-            font-weight: bold;
-          }
-        }
-      }
-    }
+  &::before {
+    content: "x";
+    color: var(--Color_Body);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 
-    .aa-DetachedCancelButton {
-      position: absolute;
-      top: 60px;
-      right: 10px;
-      z-index: 1;
-      align-items: center;
-      justify-content: center;
-      display: flex;
-      width: 44px;
-      height: 44px;
-      background-color: transparent;
-      border: none;
-      background-color: transparent;
-      color: transparent;
-
-      &::before {
-        content: "x";
-        color: var(--Color_Body);
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-
-      svg {
-        width: 14px;
-        height: 14px;
-      }
-    }
-
-    .aa-Form {
-
-      position: relative;
-      display: flex;
-      background-color: #f4f4f4;
-      align-items: center;
-
-      .aa-SubmitButton {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 44px;
-        height: 44px;
-        border: none;
-        background-color: transparent;
-
-      }
-
-      .aa-ClearButton {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 44px;
-        height: 44px;
-        border: none;
-        color: rgb(171, 171, 171);
-        background-color: transparent;
-      }
-
-      .aa-InputWrapper {
-        flex: 1;
-        padding-left: 15px;
-
-        input.aa-Input {
-          height: 44px;
-          border: none;
-          background-color: transparent;
-          font-size: 16px;
-          padding-right: 15px;
-          width: 100%;
-
-          &:focus-visible {
-            outline: none;
-          }
-
-          &::placeholder {
-            color: rgb(136, 136, 136);
-            opacity: 1;
-            /* Firefox */
-          }
-
-          &::-ms-input-placeholder {
-            /* Edge 12 -18 */
-            color: rgb(136, 136, 136);
-          }
-        }
-      }
-    }
-
-    .main-panel {
-      margin-top: 44px;
-      display: block;
-
-    }
+  svg {
+    width: 14px;
+    height: 14px;
   }
 }
-.havequery-heading{
+.havequery-heading {
   font-family: var(--Font_Family-headings);
-    font-size: 24px;
-    font-weight: 700;
-    letter-spacing: 0.3px;
-    line-height: 26px;
-    text-transform: uppercase;
-    color: white;
-    text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  line-height: 26px;
+  text-transform: uppercase;
+  color: white;
+  text-align: center;
 }
-.backBtn{
+
+.backBtn {
   background-color: #141414;
   color: white;
   border: none;
-  width:40px;
+  width: 40px;
   height: 40px;
-  svg{
+
+  svg {
     width: 20px;
     height: 20px;
   }
+}
+.app-container{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 10;
+  width: 100%;
+}
+.aa-Form {
+  display: flex;
+
+  position: relative;
+  display: flex;
+  background-color: #f4f4f4;
+  align-items: center;
+
+  .aa-SubmitButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: none;
+    background-color: transparent;
+
+  }
+
+  .aa-ClearButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: none;
+    color: rgb(171, 171, 171);
+    background-color: transparent;
+  }
+
+  .aa-InputWrapper {
+    flex: 1;
+    padding-left: 15px;
+
+    input.aa-Input {
+      height: 44px;
+      border: none;
+      background-color: transparent;
+      font-size: 16px;
+      padding-right: 15px;
+      width: 100%;
+
+      &::-webkit-search-cancel-button {
+        position: relative;
+        right: 50px;
+        display: none;
+      }
+
+      &:focus-visible {
+        outline: none;
+      }
+
+      &::placeholder {
+        color: rgb(136, 136, 136);
+        opacity: 1;
+        /* Firefox */
+      }
+
+      &::-ms-input-placeholder {
+        /* Edge 12 -18 */
+        color: rgb(136, 136, 136);
+      }
+    }
+  }
+}
+
+
+.aa-Panel {
+  background-color: white;
+  z-index: 10;
+  position: relative;
+  width: 100%;
+  .aa-List {
+    list-style-type: none;
+    background-color: #141414;
+    display: flex;
+    flex-direction: column;
+    padding-left: 15px;
+    gap: 20px;
+    padding-bottom: 15px;
+
+    li {
+      height: 14px;
+
+      .aa-ItemLink {
+        height: 14px;
+        border: none;
+        background-color: transparent;
+        width: 100%;
+        text-align: left;
+        color: white;
+        text-decoration: none;
+
+        mark {
+          color: white;
+          background-color: transparent;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+.react-loading-skeleton{
+  --base-color: #c5c1c1;
+  --highlight-color: #d9d6d6;
 }

@@ -1,7 +1,8 @@
-import './App.scss';
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from './pages/Home';
 import Products from './pages/Products';
+import 'react-loading-skeleton/dist/skeleton.css'
+import './App.scss';
 
 
 const App = () => {
