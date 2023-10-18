@@ -222,7 +222,7 @@
               position: relative;
               display: flex;
               width: 100%;
-              padding-top:  146.875%;
+              padding-top: 146.875%;
               // height: 216.6px;
 
               img {
@@ -603,6 +603,8 @@
     padding-left: 15px;
 
     input.aa-Input {
+      -webkit-appearance: none;
+      appearance: none;
       height: 44px;
       border: none;
       background-color: transparent;
@@ -610,7 +612,6 @@
       padding-right: 15px;
       width: 100%;
       color: black !important;
-      -webkit-appearance: none;
 
       &::-webkit-search-cancel-button {
         position: relative;
