@@ -609,12 +609,13 @@
       font-size: 16px;
       padding-right: 15px;
       width: 100%;
-      color: black;
+      color: black !important;
+      -webkit-appearance: none;
 
       &::-webkit-search-cancel-button {
         position: relative;
         right: 50px;
-        // display: none;
+        display: none;
       }
 
       &:focus-visible {
