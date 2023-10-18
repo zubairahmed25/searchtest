@@ -56,9 +56,11 @@
       height: 44px;
       flex: 1;
       border: none;
-      background-color: transparent;
+      // background-color: transparent;
+      background-color: rebeccapurple;
       font-size: 16px;
       padding-right: 15px;
+      color: #141414;
 
       &:focus-visible {
         outline: none;
@@ -584,7 +586,7 @@
     height: 44px;
     border: none;
     background-color: transparent;
-
+    color: #141414;
   }
 
   .aa-ClearButton {
@@ -678,4 +680,10 @@
 .react-loading-skeleton {
   --base-color: #c5c1c1;
   --highlight-color: #d9d6d6;
+}
+
+.aa-InputWrapperPrefix {
+  max-width: 44px;
+  min-width: 44px;
+  width: 100%;
 }

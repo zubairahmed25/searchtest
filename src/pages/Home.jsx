@@ -6,8 +6,8 @@ const Home = () => {
   const [query, setQuery] = useState("");
   return (
     <>
+      <AutoCompWrapper setQuery={setQuery} />
       <div className={`main-panel`} style={{ marginTop: "45px" }}>
-        <AutoCompWrapper setQuery={setQuery} />
         <SearchResultPanel query={query} setQuery={setQuery} />
       </div>
     </>
