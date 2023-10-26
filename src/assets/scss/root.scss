@@ -50,15 +50,15 @@
     --Color_Green: #12d60e;
     --Color_Yellow: #ffc700;
     --Color_Anchor: #373737;
-    --Color_Main: #fff;
+    --Color_Main: black;
     --Color_Nav: var(--Color_CoolPink);
     --Color_Body: var(--Color_Main);
     --Color_Border: var(--Color_Grey-lighter);
     --Color_Error: var(--Color_Red);
     --Color_Success: var(--Color_Green);
-    --Color_Main-DarkMode: #202020;
+    --Color_Main-DarkMode: #fff;
     --Color_Body-DarkMode: #fff;
-    --Color_Black-DarkMode: #141414;
+    --Color_Black-DarkMode: #fff;
     --Color_Nav-DarkMode: var(--Color_Black-DarkMode);
     --Font_Family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
     --Font_Family-body: 'Work Sans', var(--Font_Family);

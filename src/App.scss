@@ -20,7 +20,7 @@ body {
 	font-weight: 400;
 	line-height: 1em;
 	text-align: left;
-	color: rgba(var(--aa-text-color-rgb), var(--aa-text-color-alpha));
+	color: red !important;
 	position: fixed;
 	top: 0px !important;
 	right: 0 !important;
@@ -88,7 +88,9 @@ body {
   
 	.panel-layout {
 	  padding: 30px 15px 15px;
-	  background-color: #141414;
+	  //background-color: #141414;
+    background-color: white;
+    color: black !important;
 	  position: relative;
   
 	  .panel-section-top {
@@ -557,8 +559,8 @@ body {
   }
   
   .backBtn {
-	background-color: #141414;
-	color: white;
+	background-color: #fff;
+	color: black;
 	border: none;
 	width: 40px;
 	height: 40px;
@@ -655,7 +657,7 @@ body {
   
 	.aa-List {
 	  list-style-type: none;
-	  background-color: #141414;
+	  background-color: white;
 	  display: flex;
 	  flex-direction: column;
 	  padding-left: 15px;
@@ -671,11 +673,11 @@ body {
 		  background-color: transparent;
 		  width: 100%;
 		  text-align: left;
-		  color: white;
+		  color: black;
 		  text-decoration: none;
   
 		  mark {
-			color: white;
+			color: black;
 			background-color: transparent;
 			font-weight: bold;
 		  }
