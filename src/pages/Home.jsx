@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <>
       <AutoCompWrapper setQuery={setQuery} />
-      <div className={`main-panel`} style={{ marginTop: "45px" }}>
+      <div className={`main-panel`}>
         <SearchResultPanel query={query} setQuery={setQuery} />
       </div>
     </>

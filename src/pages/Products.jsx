@@ -1,15 +1,17 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { Suspense, lazy, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import ProductResults from "../components/ProductResults";
+const ProductResults = lazy(() => import("../components/ProductResults"));
 
 const Products = () => {
   const { query } = useParams();
   const [data, setData] = useState({});
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const getQueryData = async () => {
     try {
+      setLoading(true);
       let config = {
         method: "get",
         maxBodyLength: Infinity,
@@ -21,9 +23,11 @@ const Products = () => {
       };
       const response = await axios.request(config);
       if (response.status === 200) {
+        setLoading(false);
         setData(response.data);
       }
     } catch (error) {
+      setLoading(false);
       console.log(error);
     }
   };
@@ -47,7 +51,17 @@ const Products = () => {
       </button>
       <h1 className="havequery-heading">{query}</h1>
       <div style={{ paddingLeft: "15px", paddingRight: "15px" }}>
-        <ProductResults data={data?.hits} />
+        <div style={{ position: "relative" }}>
+          <Suspense
+            fallback={
+              <div className="preloader">
+                <span className="loader"></span>
+              </div>
+            }
+          >
+            <ProductResults data={data?.hits} loading={loading} />
+          </Suspense>
+        </div>
       </div>
     </div>
   );

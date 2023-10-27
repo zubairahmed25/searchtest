@@ -44,7 +44,7 @@ const ProductCard = ({ productData }) => {
             <div className="product-item-link-content-picture">
               <img
                 src={productData?.product_image}
-                // onLoad={() => setImageLoaded(true)}
+                onLoad={() => setImageLoaded(true)}
                 alt="Asymmetric Neck Ruched Modal Cashmere Blend Top in Chestnut Brown"
               />
             </div>

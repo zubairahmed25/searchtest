@@ -5,9 +5,11 @@ import axios from "axios";
 
 const SearchResultPanel = ({ query, setQuery }) => {
   const [data,setData]=useState({})
+  const [loading, setLoading] = useState(false);
+
   const getQueryData = async () => {
     try {
-      
+      setLoading(true)
       let config = {
         method: "get",
         maxBodyLength: Infinity,
@@ -19,10 +21,12 @@ const SearchResultPanel = ({ query, setQuery }) => {
       };
       const response = await axios.request(config);
       if (response.status === 200) {
+        setLoading(false)
         setData(response.data);
       }
     } catch (error) {
-      console.log(error);
+        setLoading(false)
+        console.log(error);
     }
   };
   useEffect(() => {
@@ -31,7 +35,7 @@ const SearchResultPanel = ({ query, setQuery }) => {
   return (
     <div className="panel-layout">
       <PanelTopSection query={query} setQuery={setQuery} />
-      <PanelBottomSection query={query} setQuery={setQuery} data={data}/>
+      <PanelBottomSection query={query} setQuery={setQuery} loading={loading} data={data}/>
     </div>
   );
 };

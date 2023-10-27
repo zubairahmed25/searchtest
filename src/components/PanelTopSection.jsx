@@ -5,7 +5,7 @@ import SearchSuggestions from "./SearchSuggestions";
 const PanelTopSection = ({ query, setQuery }) => {
   return (
     <div className="panel-section-top">
-      {query ? <SearchSuggestions /> : <PopularSearches />}
+      {query ? <SearchSuggestions query={query} /> : <PopularSearches />}
     </div>
   );
 };

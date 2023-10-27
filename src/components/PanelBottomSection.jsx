@@ -1,12 +1,24 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 // import UseFullPages from "./UseFullPages";
 import PopularCollections from "./PopularCollections";
-import ProductResults from "./ProductResults";
+const ProductResults = lazy(() => import("./ProductResults"));
 
-const PanelBottomSection = ({ query,data }) => {
+const PanelBottomSection = ({ query, data,loading }) => {
   return (
     <div className="panel-section-bottom">
-      {query ? <ProductResults data={data?.hits} /> : <PopularCollections />}
+      {query ? (
+        <Suspense
+          fallback={
+            <div className="preloader">
+              <span className="loader"></span>
+            </div>
+          }
+        >
+          <ProductResults data={data?.hits} loading={loading} />
+        </Suspense>
+      ) : (
+        <PopularCollections />
+      )}
       {/* <UseFullPages query={query} /> */}
     </div>
   );
