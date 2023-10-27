@@ -5,7 +5,7 @@ const PanelCollectionCard =lazy(()=>import("./PanelCollectionCard"))
 const PopularCollections = () => {
   return (
     <div>
-      <div className="panel-section-bottom-title">Popular collections (6)</div>
+      <div className="panel-section-bottom-title">Popular Collections</div>
       <div className="collections">
         {([...new Array(5)]).map((_,i)=>{
         return <Suspense key={i} fallback={<PanelCollectionSkelton/>}>

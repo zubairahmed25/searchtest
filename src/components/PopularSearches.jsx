@@ -16,7 +16,7 @@ const PopularSearches = () => {
   ];
   return (
     <div>
-      <div className="source-header">Popular searches (10)</div>
+      <div className="source-header">Popular Searches</div>
       <div id="autocomplete"></div>
       <ul className="popular-list">
         {linksData.map((obj) => (

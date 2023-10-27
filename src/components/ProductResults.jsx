@@ -11,14 +11,14 @@ const ProductResults = ({ data, loading }) => {
         </div>
       )}
       <div className="product-results">
-        <div className="product-results-header">
+        {/* <div className="product-results-header">
           <span className="product-results-header-title">
             Product results ({data?.length})
           </span>
           <span className="product-results-header-link">
             <a href="/">View all results</a>
           </span>
-        </div>
+        </div> */}
 
         <div className="Products-list">
           {(data || []).map((obj) => (

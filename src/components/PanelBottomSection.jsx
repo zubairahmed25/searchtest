@@ -16,9 +16,12 @@ const PanelBottomSection = ({ query, data,loading }) => {
         >
           <ProductResults data={data?.hits} loading={loading} />
         </Suspense>
-      ) : (
-        <PopularCollections />
-      )}
+      ) : 
+      // (
+      //   <PopularCollections />
+      // )
+      (<div></div>)
+      }
       {/* <UseFullPages query={query} /> */}
     </div>
   );

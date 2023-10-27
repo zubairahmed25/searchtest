@@ -49,19 +49,20 @@ const ProductCard = ({ productData }) => {
               />
             </div>
             <div className="product-item-link-content-body">
-              <div className="product-item-link-content-body-trap-line">
+              {/* <div className="product-item-link-content-body-trap-line">
                 {productData?.vendor}
+              </div> */}
+              <div className="product-item-link-content-body-price">
+                <div className="product-item-link-content-body-price-current">
+                  ${productData?.price.toFixed(2)}
+                </div>
               </div>
               <div className="product-item-link-content-body-title-wrapper">
                 <div className="product-item-link-content-body-title-wrapper-title">
                   {productData?.title}
                 </div>
               </div>
-              <div className="product-item-link-content-body-price">
-                <div className="product-item-link-content-body-price-current">
-                  ${productData?.price}
-                </div>
-              </div>
+
             </div>
           </div>
         </a>
